@@ -3,6 +3,10 @@ body {
   background-color: $black;
 }
 
+.game {
+  background-color: $white;
+}
+
 .nav_01 {
   .navWrap {
     @include screen(pcSmall) {

@@ -5396,6 +5396,9 @@ _:-ms-input-placeholder, :root .fixedBtnCover_01 .coverWrap .main .mainWrap .ite
 body {
   background-color: #000; }
 
+.game {
+  background-color: #fff; }
+
 .header_02 .headerWrap {
   height: calc(568*0.9px + 305px - 31px); }
   @media screen and (min-width: 375px) {
