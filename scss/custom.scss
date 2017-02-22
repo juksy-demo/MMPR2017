@@ -4,21 +4,167 @@ body {
 }
 
 .game {
-  background-color: $white;
+  background-color: $black;
+  .layoutWrap {
+    @include screen(pcSmall) {
+      background-image: url('../img/gamebg.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    @include screen(pcLarge) {
+      background-attachment: fixed;
+    }
+    .title {
+      padding: 50px $m_gap 0 $m_gap;
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.5em;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: $white;
+      text-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
+      &:after {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 5px;
+        margin: 5px auto 10px auto;
+        background-color: $white;
+        box-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
+      }
+    }
+    .detail {
+      padding: 0 $m_gap;
+      text-align: center;
+      font-size: 30px;
+      line-height: 1.5em;
+      font-weight: bold;
+      color: $white;
+      text-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
+    }
+    .subTitleWrap {
+      @include screen(pcSmall) {
+        width: 970px;
+        margin: 0 auto 0 auto;
+      }
+      .subTitle {
+        margin: 20px $m_gap;
+        color: $black_50;
+        @include screen(tb) {
+          margin: 20px $tb_gap 0 $tb_gap;
+        }
+        @include screen(pcSmall) {
+          width: 65%;
+          margin: 20px auto 0 auto;
+          text-align: center;
+        }
+      }
+    }
+    .embed {
+      @include screen(pcSmall) {
+        display: none;
+      }
+    }
+    .videoWrap {
+      display: none;
+      @include screen(pcSmall) {
+        display: block;
+        width: $pc_max_width;
+        height: $pc_max_width/16*9-5;
+        overflow: hidden;
+        margin: 0 auto;
+        .videoYT {
+          position: relative;
+          padding-bottom: 56.25%;
+          /* 16:9 */
+          height: 0;
+          iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+    .txtWrap {
+      padding: 0 $m_gap;
+      color: $white;
+      @include screen(tb) {
+        padding: 0 $tb_gap;
+      }
+      @include screen(pcSmall) {
+        padding: 30px 0;
+        width: $pc_max_width;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      .qrcode {
+        display: none;
+        @include screen(pcSmall) {
+          display: block;
+          float: left;
+          width: 200px;
+        }
+        .qr {
+          width: 190px;
+          height: auto;
+        }
+        .action {
+          width: 190px;
+          text-align: center;
+          font-weight: bold;
+        }
+      }
+      ul.rule {
+        padding-bottom: 10px;
+        @include screen(pcSmall) {
+          float: right;
+          width: calc(100% - 220px);
+        }
+        li {
+          @include list_style_none;
+          margin-bottom: 10px;
+          overflow: hidden;
+          .ruleTitle {
+            float: left;
+            width: 100px;
+            @include screen(tb) {
+              width: 140px;
+            }
+            @include screen(pcSmall) {
+              width: 120px;
+            }
+          }
+          .ruleTxt {
+            float: left;
+            width: calc(100% - 100px);
+            @include screen(tb) {
+              width: calc(100% - 140px);
+            }
+            @include screen(pcSmall) {
+              width: calc(100% - 120px);
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .nav_01 {
   .navWrap {
     @include screen(pcSmall) {
       //桌機-導覽列顏色
-      //background-color: rgba(0, 0, 0, 0.9);
+      background-color: rgba(3, 7, 59, 1);
     }
     .logoWrap {
       //手機-導覽列顏色
-      //background-color: rgba(0, 0, 0, 0.9);
+      background-color: rgba(3, 7, 59, 1);
       @include screen(pcSmall) {
         // 手機-導覽列顏色
-        //background-color: transparent;
+        background-color: transparent;
       }
     }
     .menuWrap {
@@ -95,7 +241,7 @@ body {
       .detailWrap {
         .txtBg {
           //描述背景色
-          background-color: rgba(0, 0, 0, 1);
+          background-color: rgba(3, 7, 59, 1);
           // 調整敘述高度
           height: 305px; //equal to .detailWrap height
           @include screen(mMedium) {
@@ -114,10 +260,11 @@ body {
         .txtInner {
           a.link {
             //馬上閱讀背景色
-            background-color: rgba(188, 0, 45, 1);
+            background-color: none;
+            @include linear-gradient(45deg, rgba(0,202,247,1) 0%, rgba(68,30,193,1) 100%);
             //馬上閱讀背景色－滑過
             &:hover {
-              background-color: rgba(188, 0, 45, 0.9);
+              opacity: 0.9;
             }
           }
         }
@@ -128,24 +275,27 @@ body {
 
 .list_03 {
   //背景色
-  //background-color: $white;
+  background-color: $black;
   .layoutWrap {
     .title {
       //上標題文字顏色
-      //color: $black;
+      color: $white;
+      text-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
       &:after {
         //上標題底線顏色
-        //background-color: $black;
+        background-color: $white;
+        box-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
       }
     }
     .detail {
       //下標題文字顏色
-      //color: $black;
+      color: $white;
+      text-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
     }
     .subTitleWrap {
       p.subTitle {
         //描述顏色
-        //color: rgba(102, 102, 102, 1);
+        color: $white;
       }
     }
     .articleWrap {
@@ -156,7 +306,7 @@ body {
               h3 {
                 @include screen(pcLarge) {
                   //文章標題滑過背景色
-                  //@include linear-gradient(to right, transparent 50%, $black 50%);
+                  @include linear-gradient(to right, transparent 50%, rgba(69, 30, 193, 1) 50%);
                 }
               }
             }
@@ -164,7 +314,7 @@ body {
               span {
                 @include screen(pcLarge) {
                   //了解更多滑過背景色
-                  //@include linear-gradient(to right, transparent 50%, $black 50%);
+                  @include linear-gradient(to right, transparent 50%, rgba(69, 30, 193, 1) 50%);
                 }
               }
             }
@@ -173,40 +323,44 @@ body {
             a.img {
               .linkWrap {
                 //奇數圖片滑過顏色
-                //background-color: rgba(188, 0, 45, 0.9);
+                background-color: rgba(69, 30, 193, 0.4);
               }
             }
           }
           &:nth-child(even) {
             //文章區塊背景色
-            //background-color: rgba(244, 244, 244, 1);
+            background-color: rgba(8, 28, 82, 1);
             &:after {
               //文章區塊背景色－三角形
-              //border-color: transparent transparent transparent rgba(244, 244, 244, 1);
+              border-color: transparent transparent transparent rgba(8, 28, 82, 1);
             }
             a.img {
               .linkWrap {
                 //偶數圖片滑過顏色
-                //background-color: rgba(188, 0, 45, 0.9);
+                background-color: rgba(69, 30, 193, 0.4);
               }
             }
             .txtWrap {
               a.category {
                 //偶數類別文字顏色
-                //color: rgba(0, 0, 0, 1);
+                color: $white;
                 //偶數類別底線顏色
-                //border-bottom: 1px solid rgba(0, 0, 0, 1);
+                border-bottom: 1px solid $white;
               }
               a.txt {
                 h3 {
                   //偶數文章標題顏色
-                  //color: rgba(0, 0, 0, 1);
+                  color: $white;
+                  @include screen(pcLarge) {
+                    //文章標題滑過背景色
+                    @include linear-gradient(to right, transparent 50%, rgba(69, 30, 193, 1) 50%);
+                  }
                 }
               }
               a.more {
                 span {
                   //偶數瞭解更多文字顏色
-                  //color: rgba(102, 102, 102, 1);
+                  color: $white;
                   &:hover {
                     //偶數瞭解更多文字顏色-滑過
                     //color: rgba(255, 255, 255, 1);
@@ -221,11 +375,11 @@ body {
         //是否出現更多文章
         //display: block;
         //更多文章文字顏色
-        //color: $black;
+        color: $white;
         span {
           @include screen(pcLarge) {
             //更多文章滑過背景色
-            //@include linear-gradient(to right, transparent 50%, $black 50%);
+            @include linear-gradient(to right, transparent 50%, rgba(69, 30, 193, 1) 50%);
           }
         }
       }
@@ -235,24 +389,27 @@ body {
 
 .list_04 {
   //模板背景色
-  //background-color: $black;
+  background-color: $black;
   .layoutWrap {
     .title {
       //上標題文字顏色
-      //color: $black;
+      color: $white;
+      text-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
       &:after {
         //上標題底線顏色
-        //background-color: $black;
+        background-color: $white;
+        box-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
       }
     }
     .detail {
       //下標題文字顏色
-      //color: $black;
+      color: $white;
+      text-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
     }
     .subTitleWrap {
       .subTitle {
         //描述文字顏色
-        //color: $white;
+        color: $white;
       }
     }
     .sliderWrap {
@@ -262,15 +419,16 @@ body {
             a.img {
               .linkWrap {
                 //圖片滑過色塊
-                //background-color: rgba(235, 90, 36, 0.9);
+                background-color: rgba(69, 30, 193, 0.4);
               }
             }
             .txtWrap {
               a.txt {
                 h3 {
+                  color: $white;
                   @include screen(pcLarge) {
                     //文字滑過色塊
-                    //@include linear-gradient(to right, transparent 50%, $black 50%);
+                    @include linear-gradient(to right, transparent 50%, rgba(69, 30, 193, 1) 50%);
                   }
                 }
               }
@@ -284,19 +442,27 @@ body {
 
 .gallery_01 {
   //模板背景色
-  // background-color: $black;
+  background-color: $black;
   .layoutWrap {
     .title {
       //標題文字顏色
-      //color: $black;
+      color: $white;
+      text-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
       &:after {
         //標題底線顏色
-        //background-color: $black;
+        background-color: $white;
+        box-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
       }
     }
     .detail {
       //描述文字顏色
-      //color: $black;
+      color: $white;
+      text-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
+    }
+    .subTitleWrap {
+      .subTitle {
+        color: $white;
+      }
     }
   }
   .gallery_01_slider {
@@ -305,7 +471,7 @@ body {
         svg {
           polyline {
             // 箭頭顏色
-            // stroke: rgba(255, 255, 255, 0.5);
+            stroke: rgba(255, 255, 255, 0.8);
           }
         }
       }
@@ -338,6 +504,8 @@ body {
       .txt {
         // 隱藏文字描述
         // display: none;
+        color: $white;
+        background-color: rgba(0, 0, 0, 0.5);
       }
     }
   }
@@ -345,13 +513,13 @@ body {
 
 .footer_01 {
   //背景色
-  //background-color: rgba(188,202,210,1);
+  background-color: rgba(3, 7, 59, 1);
 }
 
 ul.fixedBtn_01,
 .fixedBtnCover_01 .coverWrap .main .mainWrap .item ul.share {
   li .material_btn {
     //按鈕色
-    //background-color: rgba(98,195,204,1);
+    background-color: rgba(69, 30, 193, 1);
   }
 }
