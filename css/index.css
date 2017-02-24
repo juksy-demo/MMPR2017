@@ -5558,7 +5558,7 @@ body {
     display: none; }
   @media screen and (min-width: 1024px) {
     .header_02 .headerWrap .parallaxContent .title {
-      background-position: center 60%; } }
+      background-position: center 90%; } }
   .header_02 .headerWrap .detail .detailWrap .txtBg {
     background-color: #03073b;
     height: 305px; }
@@ -5683,6 +5683,9 @@ body {
     color: #fff; }
   .gallery_01 .gallery_01_slider .lSAction > a svg polyline {
     stroke: rgba(255, 255, 255, 0.8); }
+  .gallery_01 .gallery_01_slider ul.lSGallery li.active a:after {
+    background-color: rgba(69, 30, 193, 0.4);
+    border: 10px solid #451ec1; }
   .gallery_01 ul.slider li .txt {
     color: #fff;
     background-color: rgba(0, 0, 0, 0.5); }

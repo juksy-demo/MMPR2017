@@ -233,7 +233,7 @@ body {
           //桌機標題圖
           //background-image: url('../img/htitle.png');
           //桌機標題圖位置
-          background-position: center 60%;
+          background-position: center 90%;
         }
       }
     }
@@ -472,6 +472,16 @@ body {
           polyline {
             // 箭頭顏色
             stroke: rgba(255, 255, 255, 0.8);
+          }
+        }
+      }
+    }
+    ul.lSGallery {
+      li.active {
+        a {
+          &:after {
+            background-color: rgba(69, 30, 193, 0.4);
+            border: 10px solid rgba(69, 30, 193, 1);
           }
         }
       }
