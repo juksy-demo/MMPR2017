@@ -35,6 +35,9 @@
     };
   };
 
+  // set game iframe width
+  $('.game .layoutWrap .embed').width($(window).width());
+
   // nav_01
   var nav_01 = function() {
     var $window = $(window),
