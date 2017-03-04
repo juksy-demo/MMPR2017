@@ -5448,9 +5448,20 @@ body {
         width: 65%;
         margin: 20px auto 0 auto;
         text-align: center; } }
-  @media screen and (min-width: 1024px) {
-    .game .layoutWrap .embed {
-      display: none; } }
+  .game .layoutWrap .embed {
+    height: 570px; }
+    @media screen and (min-width: 375px) {
+      .game .layoutWrap .embed {
+        height: 670px; } }
+    @media screen and (min-width: 414px) {
+      .game .layoutWrap .embed {
+        height: 730px; } }
+    @media screen and (min-width: 768px) {
+      .game .layoutWrap .embed {
+        height: 1130px; } }
+    @media screen and (min-width: 1024px) {
+      .game .layoutWrap .embed {
+        display: none; } }
   .game .layoutWrap .videoWrap {
     display: none; }
     @media screen and (min-width: 1024px) {

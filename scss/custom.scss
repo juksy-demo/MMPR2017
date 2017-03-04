@@ -61,6 +61,16 @@ body {
       }
     }
     .embed {
+      height: 570px;
+      @include screen(mMedium) {
+        height: 670px;
+      }
+      @include screen(mLarge) {
+        height: 730px;
+      }
+      @include screen(tb) {
+        height: 1130px;
+      }
       @include screen(pcSmall) {
         display: none;
       }
