@@ -63,11 +63,14 @@ body {
     .embed {
       width: 100%;
       height: 570px;
+      @media screen and (min-width: 360px) {
+        height: 630px;
+      }
       @include screen(mMedium) {
         height: 670px;
       }
       @include screen(mLarge) {
-        height: 760px;
+        height: 730px;
       }
       @include screen(tb) {
         height: 1130px;
