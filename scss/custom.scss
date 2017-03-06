@@ -61,20 +61,6 @@ body {
       }
     }
     .embed {
-      width: 100%;
-      height: 570px;
-      @media screen and (min-width: 360px) {
-        height: 650px;
-      }
-      @include screen(mMedium) {
-        height: 670px;
-      }
-      @include screen(mLarge) {
-        height: 730px;
-      }
-      @include screen(tb) {
-        height: 1130px;
-      }
       @include screen(pcSmall) {
         display: none;
       }
@@ -495,7 +481,7 @@ body {
         a {
           &:after {
             background-color: rgba(69, 30, 193, 0.4);
-            border: 10px solid rgba(69, 30, 193, 1);
+            border: 5px solid rgba(69, 30, 193, 1);
           }
         }
       }
