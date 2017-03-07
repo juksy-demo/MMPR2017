@@ -260,11 +260,16 @@ body {
         .txtInner {
           a.link {
             //馬上閱讀背景色
-            background-color: none;
-            @include linear-gradient(45deg, rgba(0,202,247,1) 0%, rgba(68,30,193,1) 100%);
+            background-color: rgba(255, 255, 0, 1);
+            color: rgba(255, 0, 0, 1);
+            .linkWrap {
+              @include screen(pcSmall) {
+                border: 1px solid rgba(255, 0, 0, 1);
+              }
+            }
             //馬上閱讀背景色－滑過
             &:hover {
-              opacity: 0.9;
+              background-color: rgba(255, 255, 0, 1);
             }
           }
         }
