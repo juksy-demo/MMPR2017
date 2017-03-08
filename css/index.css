@@ -5433,47 +5433,44 @@ body {
     font-weight: bold;
     color: #fff;
     text-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7; }
-  .game .layoutWrap .subTitleWrap {
-    display: none; }
+  @media screen and (min-width: 1024px) {
+    .game .layoutWrap .subTitleWrap {
+      display: block;
+      width: 970px;
+      margin: 0 auto 20px auto; } }
+  .game .layoutWrap .subTitleWrap .subTitle {
+    margin: 20px 20px;
+    color: #fff; }
+    @media screen and (min-width: 768px) {
+      .game .layoutWrap .subTitleWrap .subTitle {
+        margin: 20px 40px 0 40px; } }
     @media screen and (min-width: 1024px) {
-      .game .layoutWrap .subTitleWrap {
-        display: block;
-        width: 970px;
-        margin: 0 auto 20px auto; } }
-    .game .layoutWrap .subTitleWrap .subTitle {
-      margin: 20px 20px;
-      color: #fff; }
-      @media screen and (min-width: 768px) {
-        .game .layoutWrap .subTitleWrap .subTitle {
-          margin: 20px 40px 0 40px; } }
-      @media screen and (min-width: 1024px) {
-        .game .layoutWrap .subTitleWrap .subTitle {
-          width: 65%;
-          margin: 20px auto 0 auto;
-          text-align: center; } }
+      .game .layoutWrap .subTitleWrap .subTitle {
+        width: 65%;
+        margin: 20px auto 0 auto;
+        text-align: center; } }
   @media screen and (min-width: 1024px) {
     .game .layoutWrap .embed {
       display: none; } }
   .game .layoutWrap .videoWrap {
-    display: none; }
+    overflow: hidden;
+    margin: 0 auto 20px auto; }
     @media screen and (min-width: 1024px) {
       .game .layoutWrap .videoWrap {
-        display: block;
         width: 970px;
         height: 540.625px;
-        overflow: hidden;
-        margin: 0 auto; }
-        .game .layoutWrap .videoWrap .videoYT {
-          position: relative;
-          padding-bottom: 56.25%;
-          /* 16:9 */
-          height: 0; }
-          .game .layoutWrap .videoWrap .videoYT iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%; } }
+        margin: 0 auto; } }
+    .game .layoutWrap .videoWrap .videoYT {
+      position: relative;
+      padding-bottom: 56.25%;
+      /* 16:9 */
+      height: 0; }
+      .game .layoutWrap .videoWrap .videoYT iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; }
   .game .layoutWrap .txtWrap {
     padding: 0 20px;
     color: #fff; }

@@ -43,7 +43,6 @@ body {
       text-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
     }
     .subTitleWrap {
-      display: none;
       @include screen(pcSmall) {
         display: block;
         width: 970px;
@@ -68,25 +67,24 @@ body {
       }
     }
     .videoWrap {
-      display: none;
+      overflow: hidden;
+      margin: 0 auto 20px auto;
       @include screen(pcSmall) {
-        display: block;
         width: $pc_max_width;
         height: $pc_max_width/16*9-5;
-        overflow: hidden;
         margin: 0 auto;
-        .videoYT {
-          position: relative;
-          padding-bottom: 56.25%;
-          /* 16:9 */
-          height: 0;
-          iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-          }
+      }
+      .videoYT {
+        position: relative;
+        padding-bottom: 56.25%;
+        /* 16:9 */
+        height: 0;
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
         }
       }
     }
@@ -313,7 +311,9 @@ body {
               h3 {
                 @include screen(pcLarge) {
                   //文章標題滑過背景色
-                  @include linear-gradient(to right, transparent 50%, rgba(69, 30, 193, 1) 50%);
+                  @include linear-gradient(to right,
+                  transparent 50%,
+                  rgba(69, 30, 193, 1) 50%);
                 }
               }
             }
@@ -321,7 +321,9 @@ body {
               span {
                 @include screen(pcLarge) {
                   //了解更多滑過背景色
-                  @include linear-gradient(to right, transparent 50%, rgba(69, 30, 193, 1) 50%);
+                  @include linear-gradient(to right,
+                  transparent 50%,
+                  rgba(69, 30, 193, 1) 50%);
                 }
               }
             }
@@ -360,7 +362,9 @@ body {
                   color: $white;
                   @include screen(pcLarge) {
                     //文章標題滑過背景色
-                    @include linear-gradient(to right, transparent 50%, rgba(69, 30, 193, 1) 50%);
+                    @include linear-gradient(to right,
+                    transparent 50%,
+                    rgba(69, 30, 193, 1) 50%);
                   }
                 }
               }
@@ -386,7 +390,9 @@ body {
         span {
           @include screen(pcLarge) {
             //更多文章滑過背景色
-            @include linear-gradient(to right, transparent 50%, rgba(69, 30, 193, 1) 50%);
+            @include linear-gradient(to right,
+            transparent 50%,
+            rgba(69, 30, 193, 1) 50%);
           }
         }
       }
@@ -435,7 +441,9 @@ body {
                   color: $white;
                   @include screen(pcLarge) {
                     //文字滑過色塊
-                    @include linear-gradient(to right, transparent 50%, rgba(69, 30, 193, 1) 50%);
+                    @include linear-gradient(to right,
+                    transparent 50%,
+                    rgba(69, 30, 193, 1) 50%);
                   }
                 }
               }
