@@ -43,13 +43,15 @@ body {
       text-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
     }
     .subTitleWrap {
+      display: none;
       @include screen(pcSmall) {
+        display: block;
         width: 970px;
-        margin: 0 auto 0 auto;
+        margin: 0 auto 20px auto;
       }
       .subTitle {
         margin: 20px $m_gap;
-        color: $black_50;
+        color: $white;
         @include screen(tb) {
           margin: 20px $tb_gap 0 $tb_gap;
         }

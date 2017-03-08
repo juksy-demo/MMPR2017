@@ -5433,21 +5433,24 @@ body {
     font-weight: bold;
     color: #fff;
     text-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7; }
-  @media screen and (min-width: 1024px) {
-    .game .layoutWrap .subTitleWrap {
-      width: 970px;
-      margin: 0 auto 0 auto; } }
-  .game .layoutWrap .subTitleWrap .subTitle {
-    margin: 20px 20px;
-    color: rgba(0, 0, 0, 0.5); }
-    @media screen and (min-width: 768px) {
-      .game .layoutWrap .subTitleWrap .subTitle {
-        margin: 20px 40px 0 40px; } }
+  .game .layoutWrap .subTitleWrap {
+    display: none; }
     @media screen and (min-width: 1024px) {
-      .game .layoutWrap .subTitleWrap .subTitle {
-        width: 65%;
-        margin: 20px auto 0 auto;
-        text-align: center; } }
+      .game .layoutWrap .subTitleWrap {
+        display: block;
+        width: 970px;
+        margin: 0 auto 20px auto; } }
+    .game .layoutWrap .subTitleWrap .subTitle {
+      margin: 20px 20px;
+      color: #fff; }
+      @media screen and (min-width: 768px) {
+        .game .layoutWrap .subTitleWrap .subTitle {
+          margin: 20px 40px 0 40px; } }
+      @media screen and (min-width: 1024px) {
+        .game .layoutWrap .subTitleWrap .subTitle {
+          width: 65%;
+          margin: 20px auto 0 auto;
+          text-align: center; } }
   @media screen and (min-width: 1024px) {
     .game .layoutWrap .embed {
       display: none; } }
