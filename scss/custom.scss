@@ -1,0 +1,550 @@
+body {
+  //若使用 header_02 將背景變成黑色 影片較不會破圖
+  background-color: $black;
+}
+
+.game {
+  background-color: $black;
+  .layoutWrap {
+    @include screen(pcSmall) {
+      background-image: url('../img/gamebg.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    @include screen(pcLarge) {
+      background-attachment: fixed;
+    }
+    .title {
+      padding: 50px $m_gap 0 $m_gap;
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.5em;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: $white;
+      text-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
+      &:after {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 5px;
+        margin: 5px auto 10px auto;
+        background-color: $white;
+        box-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
+      }
+    }
+    .detail {
+      padding: 0 $m_gap;
+      text-align: center;
+      font-size: 30px;
+      line-height: 1.5em;
+      font-weight: bold;
+      color: $white;
+      text-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
+    }
+    .subTitleWrap {
+      @include screen(pcSmall) {
+        display: block;
+        width: 970px;
+        margin: 0 auto 20px auto;
+      }
+      .subTitle {
+        margin: 20px $m_gap;
+        color: $white;
+        @include screen(tb) {
+          margin: 20px $tb_gap 0 $tb_gap;
+        }
+        @include screen(pcSmall) {
+          width: 65%;
+          margin: 20px auto 0 auto;
+          text-align: center;
+        }
+      }
+    }
+    .embed {
+      @include screen(pcSmall) {
+        display: none;
+      }
+    }
+    .videoWrap {
+      overflow: hidden;
+      margin: 0 auto 20px auto;
+      @include screen(pcSmall) {
+        width: $pc_max_width;
+        height: $pc_max_width/16*9-5;
+        margin: 0 auto;
+      }
+      .videoYT {
+        position: relative;
+        padding-bottom: 56.25%;
+        /* 16:9 */
+        height: 0;
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .txtWrap {
+      padding: 0 $m_gap;
+      color: $white;
+      @include screen(tb) {
+        padding: 0 $tb_gap;
+      }
+      @include screen(pcSmall) {
+        padding: 30px 0;
+        width: $pc_max_width;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      .qrcode {
+        display: none;
+        @include screen(pcSmall) {
+          display: block;
+          float: left;
+          width: 200px;
+        }
+        .qr {
+          width: 190px;
+          height: auto;
+        }
+        .action {
+          width: 190px;
+          text-align: center;
+          font-weight: bold;
+        }
+      }
+      ul.rule {
+        padding-bottom: 10px;
+        @include screen(pcSmall) {
+          float: right;
+          width: calc(100% - 220px);
+        }
+        li {
+          @include list_style_none;
+          margin-bottom: 10px;
+          overflow: hidden;
+          .ruleTitle {
+            float: left;
+            width: 100px;
+            @include screen(tb) {
+              width: 140px;
+            }
+            @include screen(pcSmall) {
+              width: 120px;
+            }
+          }
+          .ruleTxt {
+            float: left;
+            width: calc(100% - 100px);
+            @include screen(tb) {
+              width: calc(100% - 140px);
+            }
+            @include screen(pcSmall) {
+              width: calc(100% - 120px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav_01 {
+  .navWrap {
+    @include screen(pcSmall) {
+      //桌機-導覽列顏色
+      background-color: rgba(3, 7, 59, 1);
+    }
+    .logoWrap {
+      //手機-導覽列顏色
+      background-color: rgba(3, 7, 59, 1);
+      @include screen(pcSmall) {
+        // 手機-導覽列顏色
+        background-color: transparent;
+      }
+    }
+    .menuWrap {
+      ul.menu {
+        li {
+          @include screen(pcSmall) {
+            ul {
+              //子選單背景顏色
+              //background-color: rgba(188, 0, 45, 1);
+            }
+            &:hover ul {
+              li {
+                //子選單背景顏色
+                //background-color: rgba(188, 0, 45, 1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.header_02 {
+  .headerWrap {
+    // 調整敘述高度
+    height: calc(568*0.9px + 305px - 31px); // visual + detail - triangle(30)
+    @include screen(mMedium) {
+      height: calc(667*0.9px + 278px - 31px);
+    }
+    @include screen(mLarge) {
+      height: calc(736*0.9px + 277px - 31px);
+    }
+    @include screen(tb) {
+      height: calc(1024*0.9px + 295px - 31px);
+    }
+    @include screen(pcSmall) {
+      height: calc(768*0.9px + 180px - 31px);
+    }
+    @include screen(pcLarge) {
+      height: calc(900*0.9px + 180px - 31px);
+    }
+    .visualBg {
+      //手機主視覺
+      //background-image: url('../img/visual_m.jpg');
+      //手機主視覺圖片位置置中
+      //background-position: center;
+      @include screen(tb) {
+        //平板主視覺
+        //background-image: url('../img/visual_tb.jpg');
+        //平板主視覺圖片位置置中
+        //background-position: center;
+      }
+    }
+    .parallax {
+      .videoWrapper {
+        .videoCover {
+          //影片斜線遮罩圖
+          display: none;
+        }
+      }
+    }
+    .parallaxContent {
+      @include screen(pcSmall) {
+        .title {
+          //桌機標題圖
+          //background-image: url('../img/htitle.png');
+          //桌機標題圖位置
+          background-position: center 90%;
+        }
+      }
+    }
+    .detail {
+      .detailWrap {
+        .txtBg {
+          //描述背景色
+          background-color: rgba(3, 7, 59, 1);
+          // 調整敘述高度
+          height: 305px; //equal to .detailWrap height
+          @include screen(mMedium) {
+            height: 278px;
+          }
+          @include screen(mLarge) {
+            height: 277px;
+          }
+          @include screen(tb) {
+            height: 295px;
+          }
+          @include screen(pcSmall) {
+            height: 180px;
+          }
+        }
+        .txtInner {
+          a.link {
+            //馬上閱讀背景色
+            background-color: rgba(255, 255, 0, 1);
+            color: rgba(255, 0, 0, 1);
+            .linkWrap {
+              @include screen(pcSmall) {
+                border: 1px solid rgba(255, 0, 0, 1);
+              }
+            }
+            //馬上閱讀背景色－滑過
+            &:hover {
+              background-color: rgba(255, 255, 0, 1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.list_03 {
+  //背景色
+  background-color: $black;
+  .layoutWrap {
+    .title {
+      //上標題文字顏色
+      color: $white;
+      text-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
+      &:after {
+        //上標題底線顏色
+        background-color: $white;
+        box-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
+      }
+    }
+    .detail {
+      //下標題文字顏色
+      color: $white;
+      text-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
+    }
+    .subTitleWrap {
+      p.subTitle {
+        //描述顏色
+        color: $white;
+      }
+    }
+    .articleWrap {
+      ul.article {
+        li {
+          .txtWrap {
+            a.txt {
+              h3 {
+                @include screen(pcLarge) {
+                  //文章標題滑過背景色
+                  @include linear-gradient(to right,
+                  transparent 50%,
+                  rgba(69, 30, 193, 1) 50%);
+                }
+              }
+            }
+            a.more {
+              span {
+                @include screen(pcLarge) {
+                  //了解更多滑過背景色
+                  @include linear-gradient(to right,
+                  transparent 50%,
+                  rgba(69, 30, 193, 1) 50%);
+                }
+              }
+            }
+          }
+          &:nth-child(odd) {
+            a.img {
+              .linkWrap {
+                //奇數圖片滑過顏色
+                background-color: rgba(69, 30, 193, 0.4);
+              }
+            }
+          }
+          &:nth-child(even) {
+            //文章區塊背景色
+            background-color: rgba(8, 28, 82, 1);
+            &:after {
+              //文章區塊背景色－三角形
+              border-color: transparent transparent transparent rgba(8, 28, 82, 1);
+            }
+            a.img {
+              .linkWrap {
+                //偶數圖片滑過顏色
+                background-color: rgba(69, 30, 193, 0.4);
+              }
+            }
+            .txtWrap {
+              a.category {
+                //偶數類別文字顏色
+                color: $white;
+                //偶數類別底線顏色
+                border-bottom: 1px solid $white;
+              }
+              a.txt {
+                h3 {
+                  //偶數文章標題顏色
+                  color: $white;
+                  @include screen(pcLarge) {
+                    //文章標題滑過背景色
+                    @include linear-gradient(to right,
+                    transparent 50%,
+                    rgba(69, 30, 193, 1) 50%);
+                  }
+                }
+              }
+              a.more {
+                span {
+                  //偶數瞭解更多文字顏色
+                  color: $white;
+                  &:hover {
+                    //偶數瞭解更多文字顏色-滑過
+                    //color: rgba(255, 255, 255, 1);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .moreBtn {
+        //是否出現更多文章
+        //display: block;
+        //更多文章文字顏色
+        color: $white;
+        span {
+          @include screen(pcLarge) {
+            //更多文章滑過背景色
+            @include linear-gradient(to right,
+            transparent 50%,
+            rgba(69, 30, 193, 1) 50%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.list_04 {
+  //模板背景色
+  background-color: $black;
+  .layoutWrap {
+    .title {
+      //上標題文字顏色
+      color: $white;
+      text-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
+      &:after {
+        //上標題底線顏色
+        background-color: $white;
+        box-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
+      }
+    }
+    .detail {
+      //下標題文字顏色
+      color: $white;
+      text-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
+    }
+    .subTitleWrap {
+      .subTitle {
+        //描述文字顏色
+        color: $white;
+      }
+    }
+    .sliderWrap {
+      .slidesWrap {
+        ul.slides {
+          li {
+            a.img {
+              .linkWrap {
+                //圖片滑過色塊
+                background-color: rgba(69, 30, 193, 0.4);
+              }
+            }
+            .txtWrap {
+              a.txt {
+                h3 {
+                  color: $white;
+                  @include screen(pcLarge) {
+                    //文字滑過色塊
+                    @include linear-gradient(to right,
+                    transparent 50%,
+                    rgba(69, 30, 193, 1) 50%);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.gallery_01 {
+  //模板背景色
+  background-color: $black;
+  .layoutWrap {
+    .title {
+      //標題文字顏色
+      color: $white;
+      text-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
+      &:after {
+        //標題底線顏色
+        background-color: $white;
+        box-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
+      }
+    }
+    .detail {
+      //描述文字顏色
+      color: $white;
+      text-shadow: 0 0 6px #1678d3, 0 0 12px #1678d3, 0 0 24px #49bba7;
+    }
+    .subTitleWrap {
+      .subTitle {
+        color: $white;
+      }
+    }
+  }
+  .gallery_01_slider {
+    .lSAction {
+      >a {
+        svg {
+          polyline {
+            // 箭頭顏色
+            stroke: rgba(255, 255, 255, 0.8);
+          }
+        }
+      }
+    }
+    ul.lSGallery {
+      li.active {
+        a {
+          &:after {
+            background-color: rgba(69, 30, 193, 0.4);
+            border: 5px solid rgba(69, 30, 193, 1);
+          }
+        }
+      }
+    }
+  }
+  ul.slider {
+    li {
+      // 隱藏照片描述(調整高度)
+      // height: 240px; //240(img)+66(txt)
+      @include screen(mMedium) {
+        // 隱藏照片描述(調整高度)
+        // height: 281.25px; //281.25(img)+66(txt)
+      }
+      @include screen(mLarge) {
+        // 隱藏照片描述(調整高度)
+        // height: 310.5px; //310.5(img)+66(txt)
+      }
+      @include screen(tb) {
+        // 隱藏照片描述(調整高度)
+        // height: 576px; //576(img)+48(txt)
+      }
+      .img {
+        // 隱藏照片描述(調整高度)
+        // height: 100%; //240(img)+66(txt)
+        @include screen(tb) {
+          // 隱藏照片描述(調整高度)
+          // height: 100%; //576(img)+48(txt)
+        }
+      }
+      .txt {
+        // 隱藏文字描述
+        // display: none;
+        color: $white;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}
+
+.footer_01 {
+  //背景色
+  background-color: rgba(3, 7, 59, 1);
+}
+
+ul.fixedBtn_01,
+.fixedBtnCover_01 .coverWrap .main .mainWrap .item ul.share {
+  li .material_btn {
+    //按鈕色
+    background-color: rgba(69, 30, 193, 1);
+  }
+}
